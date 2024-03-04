@@ -1,5 +1,6 @@
-Enzo Guarnieri - 10410074
+# Sistemas Operacionais - Lab
 
-João Pedro Rodrigues Vieira - 10403595
-
-Sabrina Midori Futami Teixeira de Carvalho - 10410220
+## Integrantes do grupo
+- Enzo Guarnieri - 10410074
+- João Pedro Rodrigues Vieira - 10403595
+- Sabrina Midori F. Teixeira de Carvalho - 10410220
