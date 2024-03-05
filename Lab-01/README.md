@@ -26,4 +26,6 @@ Deste modo, um arquivo .class é gerado no diretório em que o arquivo java se e
 
 Depois de compilar, basta executar o programa usando o comando:
 `java Main`
-    
+
+## Comprovando a execução do programa:
+![Printscreen da execução no terminal](./hello-print.png)
