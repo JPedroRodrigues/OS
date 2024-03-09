@@ -6,6 +6,7 @@ necessário a biblioteca `unistd.h` que fornece acesso a API do sistema operacio
 ```c
 #include <unistd.h>
 ```
+---
 
 ## Como compilar o programa na plataforma disponibilizada:
 
@@ -27,15 +28,19 @@ Após a criação e edição de um arquivo `.c`, para compilar, usamos o comando
 gcc arquivo.c -o arquivo.out
 ```
 
+---
+
+## Como executar o programa:
+
 Para apresentar o resultado na tela, basta escrever o comando
 
 ```bash
 ./arquivo.out
 ```
 
-## Como executar o programa:
-
-
-
+---
 
 ## Comprovando a execução do programa:
+A comprovação da execução do programa se dá a partir da imagem a seguir
+
+![PrintScreen da execução do programa no terminal](lab02print.png)
