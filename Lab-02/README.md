@@ -50,14 +50,14 @@ A comprovação da execução do programa se dá a partir da imagem a seguir
 #include <stdio.h>
 int main()
 {
-printf("%d\n",getpid());
-fork();
-printf("%d\n",getpid());
-fork();
-printf("%d\n",getpid());
-fork();
-printf("%d\n",getpid());
-return 0;
+  printf("%d\n",getpid());
+  fork();
+  printf("%d\n",getpid());
+  fork();
+  printf("%d\n",getpid());
+  fork();
+  printf("%d\n",getpid());
+  return 0;
 }
 ```
 Quantos processos serão criados?
