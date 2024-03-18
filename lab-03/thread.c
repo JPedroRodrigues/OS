@@ -1,54 +1,37 @@
-#define _GNU_SOURCE 
+#define _GNU_SOURCE
 #include <stdlib.h> 
-#include <malloc.h> 
 #include <sys/types.h> 
-#include <sys/wait.h> 
-#include <signal.h> 
-#include <sched.h> 
-#include <stdio.h> 
- 
-// 64kB stack 
-#define FIBER_STACK 1024*64 
-// The child thread will execute this function 
-int threadFunction( void* argument ) 
-{ 
- 	printf("child thread exiting\n"); 
- 	return 0; 
+#include <sys/wait.h>
+#include <signal.h>
+#include <sched.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <pthread.h>
+#include <string.h>
+
+// The child thread will execute this function
+void* threadFunction( void* argument ) {
+	// receiving parent name
+        char *childName = (char *) argument;
+        printf("Child receiving string: %s\n", childName);
+       
+	strcpy(childName, "Cleiton");
+        printf("Child exiting...%s\n", childName);             
 } 
  
-int main() 
-{ 
- 	void* stack; 
- 	pid_t pid; 
- 	// Allocate the stack 
- 	stack = malloc( FIBER_STACK ); 
- 	if ( stack == 0 ) 
- 	{ 
- 		perror("malloc: could not allocate stack"); 
- 		exit(1); 
- 	} 
- 
- 	printf( "Creating child thread\n" ); 
- 	// Call the clone system call to create the child thread 
- 	pid = clone( &threadFunction, (char*) stack + FIBER_STACK, 
- 	SIGCHLD | CLONE_FS | CLONE_FILES | CLONE_SIGHAND | CLONE_VM, 0 ); 
- 	if ( pid == -1 ) 
- 	{ 
- 		perror( "clone" ); 
- 		exit(2); 
- 	} 
- 
- 	// Wait for the child thread to exit 
- 	pid = waitpid( pid, 0, 0 ); 
- 	if ( pid == -1 ) 
- 	{ 
- 		perror( "waitpid" ); 
- 		exit(3); 
- 	} 
- 
- 	// Free the stack 
- 	free( stack ); 
- 	printf( "Child thread returned and stack freed.\n" ); 
- 	return 0; 
-} 
+
+int main() { 
+        pthread_t thread_id;
+
+        char *name = "Klaythom";
+        printf("Parent name: %s\n", name);
+
+        // create thread
+        pthread_create(&thread_id, NULL, threadFunction, (void *) &name);
+
+        // waiting thread resolve
+        pthread_join(thread_id, NULL);
+
+        return 0;
+}
 
