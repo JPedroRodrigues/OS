@@ -1,5 +1,5 @@
 # Como compilar o programa na plataforma disponibilizada;
-Para compilar o código na plataforma basta escrever o codigo no bash.
+Para compilar o código na plataforma basta escrever o código no bash.
 ```bash
 gcc arquivo.c -o arquivo.out -lpthread
 ```
