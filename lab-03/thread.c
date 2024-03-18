@@ -7,22 +7,28 @@
 // The child thread will execute this function
 void* threadFunction(void* argument) {
     char* childName = (char*)argument;
+    
+    // receiving parent string
     printf("Child receiving string: %s\n", childName);
+
+    // changing the received string
     strcpy(childName, "Cleiton");
     printf("Child exiting...%s\n", childName);
+
     return NULL;
 }
+
 
 int main() {
     pthread_t thread_id;
 
-    char name[] = "Klaythom"; // Modified to an array to allow modification
+    char name[] = "Klaythom";
     printf("Parent name: %s\n", name);
 
-    // Create thread
+    // Criacao da thread
     pthread_create(&thread_id, NULL, threadFunction, (void*)name);
 
-    // Wait for the thread to finish
+    // Esperando a execucao da thread
     pthread_join(thread_id, NULL);
 
     printf("Parent name after thread: %s\n", name);
