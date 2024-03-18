@@ -16,4 +16,5 @@ Para apresentar o resultado na tela, basta escrever o comando
 # Como comprovar que os resultados propostos foram alcançados.
 
 A comprovação da execução do programa se dá a partir da imagem a seguir:
+
 ![PrintScreen da execução do programa no terminal](lab03print.jpg)
