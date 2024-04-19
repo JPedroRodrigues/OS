@@ -105,8 +105,7 @@ int main() {
     }
 
     // Creating a shared memory space to pass as function args
-    processArgs *pArg = (processArgs *)mmap(NULL, sizeof(processArgs), PROT_READ | PROT_WRITE,
-                           MAP_SHARED | MAP_ANONYMOUS, -1, 0);
+    processArgs *pArg = (processArgs *)mmap(NULL, sizeof(processArgs), PROT_READ | PROT_WRITE, MAP_SHARED | MAP_ANONYMOUS, -1, 0);
 
     for (int i = 0; i < lenFQ; i++) pArg->fQueue[i] = firstQueue[i];
 
