@@ -7,7 +7,7 @@ int row, col, t;
 
 
 void print(int *a, int n) {
-    printf("[%d", a[0]);
+    printf("Resulting Array: [%d", a[0]);
     for (int i = 1; i < n; i++) printf(", %d", a[i]);
     printf("]\n");
 }
