@@ -1,4 +1,7 @@
 # Running the program
-gcc matrix.c -o matrix.out -lpthread
+gcc matrix.c -o matrix.exe -lpthread
 
-./matrix.out
+./matrix.exe
+
+rm -if matrix.exe
+rm -if matrix.out
