@@ -1,5 +1,5 @@
-gcc bank.c -o bank.exe
+gcc bank.c -o bank.out -lpthread
 
-./bank.exe
+./bank.out
 
-rm -if *.exe
+rm -if *.out
